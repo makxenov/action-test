@@ -5,7 +5,17 @@ name: Manual workflow
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  workflow_dispatch
+  workflow_dispatch:
+  inputs:
+      release_type:
+        type: choice
+        description: Release type
+        options:
+        - major
+        - minor
+        - patch
+        default: minor
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
