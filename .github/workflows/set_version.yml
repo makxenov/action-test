@@ -18,7 +18,6 @@ jobs:
     - name: Get tags
       run: git fetch --tags origin
 
-
     - name: Set version
       id: set_version
       run: |
