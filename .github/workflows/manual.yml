@@ -23,6 +23,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: Compile
       run: g++ 1.cc
+    - name: Tag
+      run: git tag 1.0.0
     - name: Archive results
       uses: ncipollo/release-action@v1
       with:
