@@ -16,11 +16,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     # Runs a single command using the runners shell
     - name: Compile
       run: g++ 1.cc
     - name: Archive results
-        uses: actions/upload-artifact@v3
-        with:
-          name: binary
-          path: a.out
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "a.out"
