@@ -28,4 +28,5 @@ jobs:
     - name: Archive results
       uses: ncipollo/release-action@v1
       with:
+        tag: "1.0.0"
         artifacts: "a.out"
