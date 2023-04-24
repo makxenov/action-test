@@ -6,7 +6,7 @@ name: Manual workflow
 # or API.
 on:
   workflow_dispatch:
-  inputs:
+    inputs:
       release_type:
         type: choice
         description: Release type
