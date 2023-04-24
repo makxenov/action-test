@@ -20,13 +20,11 @@ jobs:
       id: set_version
       run: |
         LATEST_TAG=`git describe --tags | tr -d '\r' | cut -d'-' -f1`
-        echo $LATEST_TAG
         MAJOR=`echo $LATEST_TAG | cut -d'.' -f1`
         MINOR=`echo $LATEST_TAG | cut -d'.' -f2`
         PATCH=`echo $LATEST_TAG | cut -d'.' -f3`
         INCREMENTED=$((PATCH+1))
         echo "VERSION=$MAJOR.$MINOR.$INCREMENTED" >> $GITHUB_ENV
-        echo "VERSION=$MAJOR.$MINOR.$INCREMENTED"
     - name: Tag new version
       run: git tag ${{ env.VERSION }}
 
